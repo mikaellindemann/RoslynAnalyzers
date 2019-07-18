@@ -9,18 +9,24 @@ steps:
   inputs:
     command: build
     configuration: Release
+    projects: |
+      Lindemann.Analyzers/Lindemann.Analyzers.csproj
+      Lindemann.Analyzers.Tests/Lindemann.Analyzsers.Tests.csproj
   displayName: 'Build .NET Core Solution'
   
 - task: DotNetCoreCLI@2
   inputs:
     command: test
     configuration: Release
+    nobuild: true
   displayName: 'Test .NET Core Solution'
 
 - task: DotNetCoreCLI@2
   inputs:
-   command: pack
-   packagesToPack: 'Lindemann.Analyzers/Lindemann.Analyzers.csproj'
+    command: pack
+    configuration: Release
+    nobuild: true
+    packagesToPack: 'Lindemann.Analyzers/Lindemann.Analyzers.csproj'
   displayName: 'Pack Lindemann.Analyzers'
 
 - task: PublishBuildArtifacts@1
