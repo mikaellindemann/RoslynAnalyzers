@@ -1,3 +1,5 @@
+name: $(BuildDefinitionName)_0.1$(Rev:.r)
+
 trigger:
 - master
 
