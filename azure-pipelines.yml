@@ -8,7 +8,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: build
-    configuration: Release
+    arguments: '-c Release'
     projects: |
       Lindemann.Analyzers/Lindemann.Analyzers.csproj
       Lindemann.Analyzers.Tests/Lindemann.Analyzsers.Tests.csproj
@@ -17,15 +17,15 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    configuration: Release
+    arguments: '-c Release'
     nobuild: true
   displayName: 'Test .NET Core Solution'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: pack
-    configuration: Release
     nobuild: true
+    configurationToPack: 'Release'
     packagesToPack: 'Lindemann.Analyzers/Lindemann.Analyzers.csproj'
   displayName: 'Pack Lindemann.Analyzers'
 
