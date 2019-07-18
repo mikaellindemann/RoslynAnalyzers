@@ -10,6 +10,12 @@ steps:
     command: build
     configuration: Release
   displayName: 'Build .NET Core Solution'
+  
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    configuration: Release
+  displayName: 'Test .NET Core Solution'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -19,5 +25,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    ArtifactName: Lindemann.Analyzers.nupkg
+    ArtifactName: 'Lindemann.Analyzers'
   displayName: 'Publish Build Artifacts'
