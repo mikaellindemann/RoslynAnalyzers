@@ -2,6 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata minClientVersion="2.8">
     <id>Lindemann.Analyzers</id>
+    <version>$version$</version>
     <authors>Mikael Lindemann</authors>
     <owners>Mikael Lindemann</owners>
     <license type="expression">MIT</license>
