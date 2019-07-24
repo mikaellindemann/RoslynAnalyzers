@@ -10,7 +10,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: build
-    arguments: "-c Release /p:PackageVersion=$(Build.BuildNumber)"
+    arguments: "-c Release"
     workingDirectory: src
   displayName: 'Build .NET Core Solution'
   
@@ -26,7 +26,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: pack
-    arguments: "-c Release /p:PackageVersion=$(Build.BuildNumber)"
+    arguments: "-c Release /p:PackageVersion=$(Build.BuildNumber) Lindemann.Analyzers\Lindemann.Analyzers.csproj"
+    nobuild: true
     workingDirectory: src
     packDirectory: '$(Build.ArtifactStagingDirectory)' 
   displayName: 'Pack Lindemann.Analyzers'
