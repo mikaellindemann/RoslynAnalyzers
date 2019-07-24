@@ -17,9 +17,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    arguments: '-c Release'
+    arguments: '-c Release /p:PackageVersion=$(Build.BuildNumber)'
     nobuild: true
-    versioningScheme: byBuildNumber
     workingDirectory: src
   displayName: 'Test .NET Core Solution'
 
