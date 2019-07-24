@@ -25,6 +25,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     contents: 'src/Lindemann.Analyzers/bin/Release/*.nupkg'
+    flattenFolders: true
     targetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
