@@ -3,11 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <NuSpecFile>Lindemann.Analyzers.nuspec</NuSpecFile>
+    <NuspecFile>Lindemann.Analyzers.nuspec</NuspecFile>
+    <NuspecProperties>version=$(PackageVersion);configuration=$(Configuration)</NuspecProperties>
   </PropertyGroup>
 
   <ItemGroup>

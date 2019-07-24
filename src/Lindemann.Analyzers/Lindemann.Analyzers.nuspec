@@ -16,7 +16,7 @@
     <releaseNotes>Added analyzers to suggest the usage of Contains or ContainsKey over TryGetValue when value is discarded.</releaseNotes>
   </metadata>
   <files>
-    <file src="bin\$Configuration$\netstandard2.0\Lindemann.Analyzers.dll" target="analyzers\dotnet\cs" />
+    <file src="bin\$configuration$\netstandard2.0\Lindemann.Analyzers.dll" target="analyzers\dotnet\cs" />
     <file src="tools\*.ps1" target="tools\" />
   </files>
 </package>
