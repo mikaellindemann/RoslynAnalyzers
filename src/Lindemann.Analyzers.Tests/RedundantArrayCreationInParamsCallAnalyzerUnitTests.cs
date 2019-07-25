@@ -23,6 +23,7 @@ namespace Lindemann.Analyzers.Tests
         [InlineData(IntParamsFixedArray)]
         [InlineData(RequiredParameterFollowedByParamsFixed)]
         [InlineData(ParamsArrayTypeNotMatchingShouldHaveNoWarning)]
+        [InlineData(ParamsArrayTypeNotMatchingConstructorShouldHaveNoWarning)]
         public void WhenTestCodeIsValidNoDiagnosticIsTriggered(string testCode)
         {
             VerifyCSharpDiagnostic(testCode);
@@ -202,6 +203,23 @@ namespace ConsoleApp1
         internal static void Main()
         {
             Console.WriteLine(""Hello, {0}!"", new string[] { ""world"" });
+        }
+    }
+}";
+
+        private const string ParamsArrayTypeNotMatchingConstructorShouldHaveNoWarning = @"
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        public Program(params object[] ignore)
+        {
+
+        }
+
+        internal static void Main()
+        {
+            new Program(new string[] { ""world"" });
         }
     }
 }";
